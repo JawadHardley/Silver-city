@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot:head>
-        Home
+        Contact Us
     </x-slot:head>
-    <h1>Welcome home</h1>
+    <h1>Contact</h1>
 </x-layout>
