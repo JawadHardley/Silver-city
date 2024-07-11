@@ -3,17 +3,12 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
+    return view('welcome', );
+});
+
+Route::get('/home/{yale}', function ($yale) {
     return view('welcome', [
-        'Jobs' => [
-            'name' => 'Killer',
-            'age' => '12',
-            'dif' => 'storm',
-        ],
-        [
-            'name' => 'Honest',
-            'age' => '52',
-            'dif' => 'Thunder',
-        ],
+        'yale' => $yale
     ]);
 });
 

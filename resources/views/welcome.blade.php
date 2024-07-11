@@ -4,8 +4,5 @@
     </x-slot:head>
     <h1>Welcome home</h1>
 
-    @foreach ($Jobs as $job)
-        <li>{{ $Jobs['name'] }}</li>
-    @endforeach
-
+    <h2>{{ $yale }}</h2>
 </x-layout>
