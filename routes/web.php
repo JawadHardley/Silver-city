@@ -1,13 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\blog;
+use App\Models\Blog;
 
 
 Route::get('/', function () {
-    return view('welcome', [
-        'blog' => blog::all(),
-    ]);
+    $blog = Blog::all();
+    dd($blog);
 });
 
 Route::get('/blog/{yale}', function ($yale) {
@@ -16,7 +15,7 @@ Route::get('/blog/{yale}', function ($yale) {
             'blog',
             [
                 'yale' => $yale,
-                'blog' => blog::all()
+                'blog' => Blog::all()
             ]
         );
     }
