@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Job extends Model
 {
     protected $table = "Blogs";
+    protected $fillable = ['title', 'body'];
 
     public static function findBlog($id)
     {
