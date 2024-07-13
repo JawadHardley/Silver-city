@@ -5,12 +5,13 @@ use App\Models\Job;
 
 
 Route::get('/', function () {
-    $blog = Job::all();
-    dd($blog);
+    return view('welcome', [
+        'blog' => Job::all()
+    ]);
 });
 
 Route::get('/blog/{yale}', function ($yale) {
-    if (Job::find($yale)) {
+    if (Job::findBlog($yale)) {
         return view(
             'blog',
             [
