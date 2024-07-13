@@ -1,40 +1,25 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\blog;
+
 
 Route::get('/', function () {
     return view('welcome', [
-        'blog' => [
-            [
-                'id' => 0,
-                'title' => 'Blog Post 1',
-                'body' => 'This is the body of the blog post 1',
-            ],
-            [
-                'id' => 1,
-                'title' => 'Blog Post 2',
-                'body' => 'This is the body of the blog post 2',
-            ]
-        ]
+        'blog' => blog::all(),
     ]);
 });
 
 Route::get('/blog/{yale}', function ($yale) {
-    return view('blog', [
-        'yale' => $yale,
-        'blog' => [
+    if (Blog::findBlog($yale)) {
+        return view(
+            'blog',
             [
-                'id' => 1,
-                'title' => 'Blog Post 1',
-                'body' => 'This is the body of the blog post 1',
-            ],
-            [
-                'id' => 2,
-                'title' => 'Blog Post 2',
-                'body' => 'This is the body of the blog post 2',
+                'yale' => $yale,
+                'blog' => blog::all()
             ]
-        ]
-    ]);
+        );
+    }
 });
 
 Route::get('/about', function () {
