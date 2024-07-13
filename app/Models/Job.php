@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Blogs extends Model
+class Job extends Model
 {
     protected $table = "Blogs";
     //wait

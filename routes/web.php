@@ -1,21 +1,21 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\Blog;
+use App\Models\Job;
 
 
 Route::get('/', function () {
-    $blog = Blog::all();
+    $blog = Job::all();
     dd($blog);
 });
 
 Route::get('/blog/{yale}', function ($yale) {
-    if (Blog::find($yale)) {
+    if (Job::find($yale)) {
         return view(
             'blog',
             [
                 'yale' => $yale,
-                'blog' => Blog::all()
+                'blog' => Job::all()
             ]
         );
     }
