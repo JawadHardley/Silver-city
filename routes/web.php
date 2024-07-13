@@ -11,7 +11,7 @@ Route::get('/', function () {
 });
 
 Route::get('/blog/{yale}', function ($yale) {
-    if (Blog::findBlog($yale)) {
+    if (Blog::find($yale)) {
         return view(
             'blog',
             [
