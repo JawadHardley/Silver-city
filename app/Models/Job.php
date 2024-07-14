@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Job extends Model
 {
     use HasFactory;
-    protected $table = "Blogs";
+    protected $table = "jobs_listing";
     protected $fillable = ['title', 'body'];
 
     public static function findBlog($id)

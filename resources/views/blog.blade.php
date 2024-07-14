@@ -5,7 +5,7 @@
     </x-slot:head>
     {{$blog->title}}
     <p>
-        {{$blog->body}}
+        {{$blog->Salary}}/=
     </p>
 
 </x-layout>
