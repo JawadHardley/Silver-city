@@ -3,9 +3,9 @@
     <x-slot:head>
         {{$yale}}
     </x-slot:head>
-    {{$blog[$yale]['title']}}
+    {{$blog->title}}
     <p>
-        {{$blog[$yale]['body']}}
+        {{$blog->body}}
     </p>
 
 </x-layout>

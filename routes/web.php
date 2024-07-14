@@ -16,7 +16,7 @@ Route::get('/blog/{yale}', function ($yale) {
             'blog',
             [
                 'yale' => $yale,
-                'blog' => Job::all()
+                'blog' => Job::find($yale),
             ]
         );
     }
