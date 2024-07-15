@@ -20,4 +20,13 @@ class Job extends Model
             abort(404);
         }
     }
+
+    public function employer()
+    {
+        return $this->belongsTo(Employer::class);
+    }
+    // public function tag()
+    // {
+    //     return $this->belongsToMany(tag::class);
+    // }
 }
