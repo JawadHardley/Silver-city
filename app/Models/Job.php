@@ -21,6 +21,7 @@ class Job extends Model
         }
     }
 
+    // This below function stages the relationship between the employer and the Jobs
     public function employer()
     {
         return $this->belongsTo(Employer::class);
