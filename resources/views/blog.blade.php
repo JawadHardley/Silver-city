@@ -1,11 +1,10 @@
 <x-layout>
 
     <x-slot:head>
-        {{$yale}}
+        {{$blog->title}}
     </x-slot:head>
-    {{$blog->title}}
     <p>
-        {{$blog->Salary}}/=
+        <b>Salary:</b> {{number_format($blog->Salary, 0, '.', ',')}} USD
     </p>
 
 </x-layout>
