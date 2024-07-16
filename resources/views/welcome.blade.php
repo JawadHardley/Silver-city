@@ -15,6 +15,7 @@
                             alt="Sunset in the mountains">
                         <div class="px-6 py-4">
                             <div class="font-bold text-xl mb-2">{{$bog['title']}}</div>
+                            <p class="text-gray-700 text-base">{{ $bog->employer->name }}</p>
                         </div>
                     </div>
                 </a>
