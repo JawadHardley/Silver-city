@@ -6,7 +6,7 @@ use App\Models\Job;
 
 Route::get('/', function () {
     return view('welcome', [
-        'blog' => Job::all()
+        'blog' => Job::with('employer')->get(),
     ]);
 });
 
