@@ -9,7 +9,8 @@ class Job extends Model
 {
     use HasFactory;
     protected $table = "jobs_listing";
-    protected $fillable = ['title', 'body'];
+    // protected $fillable = ['employer_id', 'title', 'Salary'];
+    protected $guarded = [];
 
     public static function findBlog($id)
     {

@@ -8,19 +8,31 @@ Route::get('/', function () {
 });
 
 Route::get('/jobs', function () {
-    return view('jobs', [
-        'jobs' => Job::with('employer')->paginate(3),
+    return view('jobs.index', [
+        'jobs' => Job::with('employer')->latest()->paginate(3),
     ]);
 });
 
 Route::get('/jobs/create', function () {
-    dd('hello there');
+    return view('jobs.create');
+});
+
+Route::post('/jobs', function () {
+    //validation
+
+    Job::create([
+        'title' => request('title'),
+        'Salary' => request('salary'),
+        'employer_id' => 2,
+    ]);
+
+    return redirect('/jobs');
 });
 
 Route::get('/jobs/{yale}', function ($yale) {
     if (Job::findBlog($yale)) {
         return view(
-            'job',
+            'jobs.show',
             [
                 'job' => Job::find($yale),
             ]

@@ -4,7 +4,7 @@
         {{$job->title}}
     </x-slot:head>
     <p>
-        <b>Salary:</b> {{number_format($job->Salary, 0, '.', ',')}} USD
+        <b>Salary:</b> {{$job->Salary}} USD
     </p>
 
 </x-layout>
