@@ -45,6 +45,8 @@ class JobsController extends Controller
                     'job' => $jobs,
                 ]
             );
+        } else {
+            dd('wow we failed');
         }
     }
 

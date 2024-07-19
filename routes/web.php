@@ -9,12 +9,26 @@ Route::view('/contact', 'contact');
 Route::view('/', 'welcome');
 Route::view('/about', 'about');
 
-//For Jobs
-Route::get('/jobs', [JobsController::class, 'index']);
-Route::get('/jobs/create', [JobsController::class, 'create']);
-Route::post('/jobs', [JobsController::class, 'store']);
-Route::get('/jobs/{jobs}', [JobsController::class, 'show']);
-Route::get('/jobs/{jobs}/edit', [JobsController::class, 'edit']);
-Route::patch('/jobs/{jobs}', [JobsController::class, 'update']);
-Route::delete('/jobs/{jobs}', [JobsController::class, 'destroy']);
+// For Jobs
+Route::controller(JobsController::class)->group(function () {
+    Route::get('/jobs', 'index');
+    Route::get('/jobs/create', 'create');
+    Route::get('/jobs/{jobs}', 'show');
+    Route::post('/jobs', 'store');
+    Route::get('/jobs/{jobs}/edit', 'edit');
+    Route::patch('/jobs/{jobs}', 'update');
+    Route::delete('/jobs/{jobs}', 'destroy');
+});
+
+// Route::resource('jobs', JobsController::class, [
+//     'only' => [
+//         'index',
+//         'create',
+//         'edit',
+//         'show',
+//         'update',
+//         'destroy',
+//         'store',
+//     ]
+// ]);
 
