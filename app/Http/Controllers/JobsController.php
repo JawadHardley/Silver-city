@@ -38,12 +38,9 @@ class JobsController extends Controller
 
     public function show(Job $jobs)
     {
-        return view(
-            'jobs.show',
-            [
-                'job' => $jobs,
-            ]
-        );
+        return view('jobs.show', [
+            'job' => $jobs,
+        ]);
     }
 
     public function edit(Job $jobs)
