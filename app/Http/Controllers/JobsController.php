@@ -38,16 +38,12 @@ class JobsController extends Controller
 
     public function show(Job $jobs)
     {
-        if (Job::findOrFail($jobs)) {
-            return view(
-                'jobs.show',
-                [
-                    'job' => $jobs,
-                ]
-            );
-        } else {
-            abort(404);
-        }
+        return view(
+            'jobs.show',
+            [
+                'job' => $jobs,
+            ]
+        );
     }
 
     public function edit(Job $jobs)

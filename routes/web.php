@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\JobsController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Job;
-use App\Http\Controllers\JobsController;
 
 
 Route::view('/contact', 'contact');
