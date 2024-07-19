@@ -36,28 +36,28 @@ class JobsController extends Controller
         return redirect('/jobs');
     }
 
-    public function show(Job $jobs)
+    public function show(Job $job)
     {
         return view('jobs.show', [
-            'job' => $jobs,
+            'job' => $job,
         ]);
     }
 
-    public function edit(Job $jobs)
+    public function edit(Job $job)
     {
         return view('jobs.edit', [
-            'job' => $jobs,
+            'job' => $job,
         ]);
     }
 
-    public function update(Job $jobs)
+    public function update(Job $job)
     {
         request()->validate([
             'title' => ['required', 'min:3'],
             'salary' => ['required'],
         ]);
 
-        $job = $jobs;
+        $jobs = $job;
 
         $job->update([
             'title' => request('title'),
@@ -67,9 +67,9 @@ class JobsController extends Controller
         return redirect('/jobs/' . $jobs->id);
     }
 
-    public function destroy(Job $jobs)
+    public function destroy(Job $job)
     {
-        $jobs->delete();
+        $job->delete();
         return redirect('/jobs');
     }
 }

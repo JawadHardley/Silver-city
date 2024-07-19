@@ -13,11 +13,11 @@ Route::view('/about', 'about');
 // Route::controller(JobsController::class)->group(function () {
 //     Route::get('/jobs', 'index');
 //     Route::get('/jobs/create', 'create');
-//     Route::get('/jobs/{jobs}', 'show');
 //     Route::post('/jobs', 'store');
-//     Route::get('/jobs/{jobs}/edit', 'edit');
-//     Route::patch('/jobs/{jobs}', 'update');
-//     Route::delete('/jobs/{jobs}', 'destroy');
+//     Route::get('/jobs/{job}', 'show');
+//     Route::get('/jobs/{job}/edit', 'edit');
+//     Route::patch('/jobs/{job}', 'update');
+//     Route::delete('/jobs/{job}', 'destroy');
 // });
 
 Route::resource('jobs', JobsController::class);
