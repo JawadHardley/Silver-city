@@ -38,7 +38,7 @@ class JobsController extends Controller
 
     public function show(Job $jobs)
     {
-        if (Job::findBlog($jobs)) {
+        if (Job::findOrFail($jobs)) {
             return view(
                 'jobs.show',
                 [
@@ -46,7 +46,7 @@ class JobsController extends Controller
                 ]
             );
         } else {
-            dd('wow we failed');
+            abort(404);
         }
     }
 
