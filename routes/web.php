@@ -36,47 +36,46 @@ Route::post('/jobs', function () {
 });
 
 //Show a single job
-Route::get('/jobs/{yale}', function ($yale) {
-    if (Job::findBlog($yale)) {
+Route::get('/jobs/{jobs}', function (Job $jobs) {
+    if (Job::findBlog($jobs)) {
         return view(
             'jobs.show',
             [
-                'job' => Job::find($yale),
+                'job' => $jobs,
             ]
         );
     }
 });
 
 //Show Edit a job
-Route::get('/jobs/{id}/edit', function ($id) {
+Route::get('/jobs/{jobs}/edit', function (Job $jobs) {
     return view('jobs.edit', [
-        'job' => Job::find($id),
+        'job' => $jobs,
     ]);
 });
 
 //Edit a job
-Route::patch('/jobs/{id}', function ($id) {
+Route::patch('/jobs/{jobs}', function (Job $jobs) {
 
     request()->validate([
         'title' => ['required', 'min:3'],
         'salary' => ['required'],
     ]);
 
-    $job = Job::find($id);
+    $job = $jobs;
 
     $job->update([
         'title' => request('title'),
         'Salary' => request('salary'),
     ]);
 
-    return redirect('/jobs/' . $job->id);
+    return redirect('/jobs/' . $jobs->id);
 
 });
 
 //Delete/destroy a job
-Route::delete('/jobs/{id}', function ($id) {
-    $job = Job::findOrFail($id);
-    $job->delete();
+Route::delete('/jobs/{jobs}', function (Job $jobs) {
+    $jobs->delete();
     return redirect('/jobs');
 });
 
