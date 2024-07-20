@@ -8,6 +8,6 @@ class RegisterUserController extends Controller
 {
     public function create()
     {
-        dd('were are here');
+        return view('auth.register');
     }
 }
