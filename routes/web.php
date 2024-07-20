@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\JobsController;
+use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\RegisterUserController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Job;
@@ -23,5 +24,9 @@ Route::view('/about', 'about');
 
 Route::resource('jobs', JobsController::class);
 
+//Auth
 Route::get('/register', [RegisterUserController::class, 'create']);
+Route::post('/register', [RegisterUserController::class, 'store']);
 
+Route::get('/login', [SessionsController::class, 'create']);
+Route::post('/login', [SessionsController::class, 'store']);
