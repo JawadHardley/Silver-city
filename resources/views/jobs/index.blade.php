@@ -5,7 +5,7 @@
     <h1>Jobs Spree</h1>
     <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            @foreach($jobs as $bog) 
+            @foreach($jobs as $bog)
 
                 <a href="/jobs/{{$bog['id']}}">
                     <div class="max-w-sm rounded overflow-hidden shadow-lg -mx-2">
@@ -21,7 +21,7 @@
 
             @endforeach
         </div>
-        <div>
+        <div class="mt-10">
             {{$jobs->links();}}
         </div>
     </div>
