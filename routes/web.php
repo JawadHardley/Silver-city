@@ -30,3 +30,4 @@ Route::post('/register', [RegisterUserController::class, 'store']);
 
 Route::get('/login', [SessionsController::class, 'create']);
 Route::post('/login', [SessionsController::class, 'store']);
+Route::post('/logout', [SessionsController::class, 'destroy']);
