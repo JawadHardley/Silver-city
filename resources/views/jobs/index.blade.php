@@ -17,6 +17,7 @@
                             <p class="text-gray-700 text-base">{{ $bog->employer->name }}</p>
                         </div>
                     </div>
+
                 </a>
 
             @endforeach
