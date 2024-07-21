@@ -27,16 +27,13 @@ class JobsController extends Controller
 
     public function store()
     {
-        request()->validate([
+        $x = request()->validate([
             'title' => ['required', 'min:3'],
             'salary' => ['required'],
+            'employer_id' => ['required', 'numeric'],
         ]);
 
-        Job::create([
-            'title' => request('title'),
-            'Salary' => request('salary'),
-            'employer_id' => 2,
-        ]);
+        Job::create($x);
 
         return redirect('/jobs');
     }
@@ -65,17 +62,14 @@ class JobsController extends Controller
 
     public function update(Job $job)
     {
-        request()->validate([
+        $x = request()->validate([
             'title' => ['required', 'min:3'],
             'salary' => ['required'],
         ]);
 
         $jobs = $job;
 
-        $job->update([
-            'title' => request('title'),
-            'Salary' => request('salary'),
-        ]);
+        $job->update($x);
 
         return redirect('/jobs/' . $jobs->id);
     }
