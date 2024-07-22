@@ -7,13 +7,6 @@ use App\Mail\JobPost;
 use Illuminate\Support\Facades\Route;
 use App\Models\Job;
 
-Route::get('/mail', function () {
-    \Illuminate\Support\Facades\Mail::to('jawadcharls@gmail.com')->send(
-        new \App\Mail\JobPost()
-    );
-    return 'Flex';
-});
-
 Route::view('/contact', 'contact');
 Route::view('/', 'welcome');
 Route::view('/about', 'about');
