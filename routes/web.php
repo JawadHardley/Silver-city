@@ -11,6 +11,11 @@ Route::view('/contact', 'contact');
 Route::view('/', 'welcome');
 Route::view('/about', 'about');
 
+Route::get('test', function () {
+    dispatch(function () {
+        logger('wow this job was dispatched');
+    });
+});
 // For Jobs
 Route::controller(JobsController::class)->group(function () {
     Route::get('/jobs', 'index');
