@@ -37,8 +37,8 @@ class JobsController extends Controller
         ]);
 
         $job = Job::create($x);
-
-        Mail::to('jawadcharls@gmail.com')->send(
+        // dd($job->employer->user->email);
+        Mail::to($job->employer->user->email)->send(
             new JobPost($job)
         );
 
