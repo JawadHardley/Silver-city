@@ -1,20 +1,21 @@
 <?php
 
 use App\Http\Controllers\JobsController;
-use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\RegisterUserController;
+use App\Http\Controllers\SessionsController;
+use App\Jobs\TextJob;
 use App\Mail\JobPost;
-use Illuminate\Support\Facades\Route;
 use App\Models\Job;
+use Illuminate\Support\Facades\Route;
+
 
 Route::view('/contact', 'contact');
 Route::view('/', 'welcome');
 Route::view('/about', 'about');
 
 Route::get('test', function () {
-    dispatch(function () {
-        logger('wow this job was dispatched');
-    });
+    $job = Job::first();
+    TextJob::dispatch($job);
 });
 // For Jobs
 Route::controller(JobsController::class)->group(function () {
