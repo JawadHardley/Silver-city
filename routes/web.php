@@ -8,7 +8,7 @@ use App\Mail\JobPost;
 use App\Models\Job;
 use Illuminate\Support\Facades\Route;
 
-
+//only views 
 Route::view('/contact', 'contact');
 Route::view('/', 'welcome');
 Route::view('/about', 'about');
