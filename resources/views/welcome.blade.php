@@ -2,6 +2,6 @@
     <x-slot:head>
         Home
     </x-slot:head>
-    <h1>Jobs Spree Home</h1>
+    <h1>JOB SPREE </h1>
 
 </x-layout>
